@@ -5,7 +5,12 @@ body, h1, h2, ul, li, a {
 } /* Removes default margining and padding and sets the font families for the webpage, applying to <body>, <h1>, <h2>, <ul>, <li>, and <a> elements */
 
 body {
-    background: radial-gradient(circle, rgb(0,0,0), rgb(0,0,40)); /* Gradient dark purple background */
+    background: radial-gradient(circle, rgb(0,0,0), rgb(0,0,40)); /* Gradient dark blue background */
+    max-width: 700px; /* Sets the max width of the webpage to 700px for easier readability */
+    margin: 0 auto; /* Centers the webpage horizontally */
+    overflow-wrap: break-word; /* Automatically breaks larger words so that they stay within the 700px width */
+    padding: 20px; /* Adds padding (gaps) of 20px both horizontally and vertically to the webpage */
+    line-height: 1.5; /* Sets the line height to 1.5 for slightly more spacing between each line */    
 } /* Gives the body of the website a dark purple and black radial gradient background */
 
 h1 {
@@ -188,4 +193,32 @@ a:hover {
 
 img {
     border-radius: 10px; /* Applies a 10px radius for borders of images to create rounded corners */
+}
+
+header {
+    text-align: center; /* Aligns text to the center */
+} /* Center aligns text that is part of the <header> element */
+
+.PlumFont {
+    color: plum; /* Plum color for the text */
+} /* Applies a green-yellow text color */
+
+ol {
+    counter-reset: item; /* Initializes a counter for ordered list items */
+} /* Sets up a counter for items in an ordered list */
+
+ol li {
+    display: block; /* Makes list items block-level elements for more precise positioning */
+    position: relative; /* Applies relative positioning to list numbers */
+    padding-left: 50px; /* Provides space away from the question text for the custom counter numbers to be placed */
+} /* Converts list items to block-level for precise positioning, applies relative positioning to list numbers, and creates space for custom counter numbers */
+
+ol li::before {
+    content: counter(item); /* Displays the current counter value before each list item */
+    counter-increment: item; /* Increases the counter value for each list item */
+    position: absolute; /* Positions the counter numbers independently of the list content using absolute positioning */
+    left: 0; /* Aligns the counter numbers to the left side of the list item */
+    color: cyan; /* Sets the color of the counter numbers to cyan */
+    font-size: 2em; /* Sets the font size of the counter numbers to match h1 size */
+    font-weight: bold; /* Makes the counter numbers bold */
 }
